@@ -1,7 +1,7 @@
 snippet php
-	<?php
-	${1}
-	?>
+	<?php ${1} ?>
+snippet phpe
+	<?php echo ${1} ?>
 snippet ec
 	echo "${1:string}"${2};
 snippet inc
@@ -109,6 +109,59 @@ snippet doc_f
 	${1}function ${2}(${3})
 	{${7}
 	}
+# getters and setters
+snippet ppriv
+	/**
+	 * ${3:undocumented class variable}
+	 *
+	 * @var ${4:string}
+	 */
+	private $${1:} = ${2:null};
+
+	${6}
+	/**
+	 * @return $4
+	 */
+	public function get${5:}()
+	{
+	  return $this->$1;
+	}
+
+	/**
+	 * @param  $4
+	 * @return null
+	 */
+	public function set$5($$1)
+	{
+	  $this->$1 = $$1;
+	}
+snippet ppro
+	/**
+	 * ${3:undocumented class variable}
+	 *
+	 * @var ${4:string}
+	 */
+	protected $${1:} = ${2:null};
+
+	${6}
+	/**
+	 * @return $4
+	 */
+	public function get${5:}()
+	{
+	  return $this->$1;
+	}
+
+	/**
+	 * @param  $4
+	 * @return null
+	 */
+	public function set$5($$1)
+	{
+	  $this->$1 = $$1;
+	}
+snippet vd
+	var_dump(${1:var});${2}
 # Header
 snippet doc_h
 	/**
@@ -164,22 +217,22 @@ snippet do
 	} while (${1:/* condition */});
 snippet if
 	if (${1:/* condition */}) {
-		${2:// code...}
+		${2}
 	}
 snippet ife
 	if (${1:/* condition */}) {
-		${2:// code...}
+		${2}
 	} else {
-		${3:// code...}
+		${3}
 	}
 	${4}
 snippet else
 	else {
-		${1:// code...}
+		${1}
 	}
 snippet elseif
 	elseif (${1:/* condition */}) {
-		${2:// code...}
+		${2}
 	}
 # Tertiary conditional
 snippet t
