@@ -13,8 +13,21 @@ snippet interface
 	{
 	    ${4}
 	}
+# Class sf1
+snippet class symfony1.4
+	<?php
+
+	/**
+	 * ${2:Class documentation}
+	 *
+	 * @author     `g:snips_author`
+	 */
+	class ${1:`substitute(Filename('', 'myClass'), '\.class$', '', '')`}
+	{
+		${3}
+	}
 # Class
-snippet class
+snippet class php5.3
 	<?php
 
 	namespace ${1:};
