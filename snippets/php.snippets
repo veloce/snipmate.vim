@@ -1,183 +1,67 @@
+# Interface
+snippet interface
+	<?php
+
+	namespace ${1:};
+
+	/**
+	 * ${3:Interface documentation}
+	 *
+	 * @author     `g:snips_author`
+	 */
+	interface ${2:`Filename('', 'myClass')`}
+	{
+	    ${4}
+	}
+# Class
+snippet class
+	<?php
+
+	namespace ${1:};
+
+	/**
+	 * ${3:Class documentation}
+	 *
+	 * @author     `g:snips_author`
+	 */
+	class ${2:`Filename('', 'myClass')`}
+	{
+		${4}
+	}
+snippet cv
+	/**
+	 * ${3:Variable comment}
+	 *
+	 * @var ${4:string}
+	 */
+	${1:protected} $${2:};
+
+	${6}
+	/**
+	 * @return $4
+	 */
+	public function get${5:}()
+	{
+		return $this->$2;
+	}
+
+	/**
+	 * @param  $4
+	 * @return null
+	 */
+	public function set$5($$2)
+	{
+	    $this->$2 = $$2;
+	}
+
 snippet php
 	<?php ${1} ?>
 snippet phpe
 	<?php echo ${1} ?>
-# Start Docblock
-snippet /*
-	/**
-	 * ${1}
-	 **/
-# Class - post doc
-snippet doc_cp
-	/**
-	 * ${1:undocumented class}
-	 *
-	 * @package ${2:default}
-	 * @author ${3:`g:snips_author`}
-	**/${4}
-# Class Variable - post doc
-snippet doc_vp
-	/**
-	 * ${1:undocumented class variable}
-	 *
-	 * @var ${2:string}
-	 **/${3}
-# Class Variable
-snippet doc_v
-	/**
-	 * ${3:undocumented class variable}
-	 *
-	 * @var ${4:string}
-	 **/
-	${1:var} $${2};${5}
-# Class
-snippet doc_c
-	/**
-	 * ${3:undocumented class}
-	 *
-	 * @packaged ${4:default}
-	 * @author ${5:`g:snips_author`}
-	 **/
-	${1:}class ${2:}
-	{${6}
-	} // END $1class $2
-# Constant Definition - post doc
-snippet doc_dp
-	/**
-	 * ${1:undocumented constant}
-	 **/${2}
-# Constant Definition
-snippet doc_d
-	/**
-	 * ${3:undocumented constant}
-	 **/
-	define(${1}, ${2});${4}
-# Function - post doc
-snippet doc_fp
-	/**
-	 * ${1:undocumented function}
-	 *
-	 * @return ${2:void}
-	 * @author ${3:`g:snips_author`}
-	 **/${4}
-# Function signature
-snippet doc_s
-	/**
-	 * ${4:undocumented function}
-	 *
-	 * @return ${5:void}
-	 * @author ${6:`g:snips_author`}
-	 **/
-	${1}function ${2}(${3});${7}
-# Function
-snippet doc_f
-	/**
-	 * ${4:undocumented function}
-	 *
-	 * @return ${5:void}
-	 * @author ${6:`g:snips_author`}
-	 **/
-	${1}function ${2}(${3})
-	{${7}
-	}
 # getters and setters
-snippet ppriv
-	/**
-	 * ${3:undocumented class variable}
-	 *
-	 * @var ${4:string}
-	 */
-	private $${1:} = ${2:null};
-
-	${6}
-	/**
-	 * @return $4
-	 */
-	public function get${5:}()
-	{
-	  return $this->$1;
-	}
-
-	/**
-	 * @param  $4
-	 * @return null
-	 */
-	public function set$5($$1)
-	{
-	  $this->$1 = $$1;
-	}
-snippet ppro
-	/**
-	 * ${3:undocumented class variable}
-	 *
-	 * @var ${4:string}
-	 */
-	protected $${1:} = ${2:null};
-
-	${6}
-	/**
-	 * @return $4
-	 */
-	public function get${5:}()
-	{
-	  return $this->$1;
-	}
-
-	/**
-	 * @param  $4
-	 * @return null
-	 */
-	public function set$5($$1)
-	{
-	  $this->$1 = $$1;
-	}
 snippet vd
 	var_dump(${1:var});${2}
-# Header
-snippet doc_h
-	/**
-	 * ${1}
-	 *
-	 * @author ${2:`g:snips_author`}
-	 * @version ${3:$Id$}
-	 * @copyright ${4:$2}, `strftime('%d %B, %Y')`
-	 * @package ${5:default}
-	 **/
-	
-	/**
-	 * Define DocBlock
-	 *//
-# Interface
-snippet doc_i
-	/**
-	 * ${2:undocumented class}
-	 *
-	 * @package ${3:default}
-	 * @author ${4:`g:snips_author`}
-	 **/
-	interface ${1:}
-	{${5}
-	} // END interface $1
-# class ...
-snippet class
-	/**
-	 * ${1}
-	 **/
-	class ${2:ClassName}
-	{
-		${3}
-		function ${4:__construct}(${5:argument})
-		{
-			${6:// code...}
-		}
-	}
-# define(...)
-snippet def
-	define('${1}'${2});${3}
-# defined(...)
-snippet def?
-	${1}defined('${2}')${3}
-snippet wh
+snippet while
 	while (${1:/* condition */}) {
 		${2:// code...}
 	}
@@ -205,9 +89,6 @@ snippet elseif
 	elseif (${1:/* condition */}) {
 		${2}
 	}
-# Tertiary conditional
-snippet t
-	$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
 snippet switch
 	switch ($${1:variable}) {
 		case '${2:value}':
