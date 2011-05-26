@@ -2,7 +2,7 @@
 snippet interface
 	<?php
 
-	namespace ${1:};
+	namespace ${1:`substitute(substitute(expand("%:p:r"), '^\/\U\+', '', ''), '\/', '\\\', 'g')`};
 
 	/**
 	 * ${3:Interface documentation}
@@ -30,7 +30,7 @@ snippet class symfony1.4
 snippet class php5.3
 	<?php
 
-	namespace ${1:};
+	namespace ${1:`substitute(substitute(expand("%:p:r"), '^\/\U\+', '', ''), '\/', '\\\', 'g')`};
 
 	/**
 	 * ${3:Class documentation}
