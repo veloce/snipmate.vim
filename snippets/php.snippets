@@ -74,6 +74,8 @@ snippet phpe
 # getters and setters
 snippet vd
 	var_dump(${1:var});${2}
+snippet vdd
+	var_dump(${1:var});die;
 snippet while
 	while (${1:/* condition */}) {
 		${2:// code...}
@@ -133,3 +135,5 @@ snippet rr
 	array(${1})${2}	
 snippet arr
 	array('${1}' => ${2})${3}
+snippet $t
+	$this->
